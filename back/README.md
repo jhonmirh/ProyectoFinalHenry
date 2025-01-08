@@ -22,9 +22,31 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Proyecto Backend
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este proyecto utiliza NestJS y TypeORM. Asegúrate de configurar correctamente los alias en `tsconfig.build.json`.
+
+## Configuración
+
+1. Asegúrate de tener Node.js instalado.
+2. Instala las dependencias con `npm install`.
+3. Configura las variables de entorno en el archivo `.env`.
+4. Ejecuta el proyecto con `npm run start`.
+
+## Alias de Importación
+
+Asegúrate de que los alias de importación estén configurados en `tsconfig.build.json`:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@entities/*": ["src/entities/*"]
+    }
+  }
+}
+```
 
 ## Project setup
 

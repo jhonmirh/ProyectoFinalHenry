@@ -6,8 +6,9 @@ import { User } from 'src/entities/User.entity';
 import { NotificationsService } from '../notifications/notifications.service';
 import { RolesService } from '../roles/roles.service';
 import { RolesModule } from '../roles/roles.module';
-import { Role } from 'src/entities/role.entity';
+
 import { UsersModule } from '../users/users.module'; //// GOOGLE LOGIN
+import { Role } from 'src/entities/Role.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User, Role]),RolesModule, UsersModule], //// GOOGLE LOGIN UsersModule
