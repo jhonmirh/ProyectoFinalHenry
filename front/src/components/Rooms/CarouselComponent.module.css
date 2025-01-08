@@ -1,0 +1,74 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    align-items: center;
+    gap: 0;
+    margin: 0 0 ;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+  
+
+  .navigationButton {
+    background-color:  #b69663; 
+    color: #ffffff;
+    border: 2px solid  #b69663; 
+    border-radius: 50%;
+    width: 56px; 
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+
+  .prevButton {
+    margin-left: 12px;
+  }
+  
+
+  .nextButton {
+    margin-right: 12px;
+  }
+  
+
+  .navigationButton:hover,
+  .navigationButton:focus {
+    background-color: #ffffff;
+    color:  #d9af71;
+    outline: none;
+  }
+  
+
+  .swiperContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .swiperSlide {
+    display: flex;
+    justify-content: center;
+    margin: 0 0px;
+  }
+  
+
+  .noRoomsMessage {
+    text-align: center;
+    color: #888888;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }

@@ -1,0 +1,280 @@
+.container {
+    min-height: 100vh;
+    background-color: rgba(240, 248, 255, 0);
+    padding-top: 0;
+    position: relative;
+}
+.volver {
+    font-size: 1.5rem;
+    position: fixed;
+    top: 8.5rem;
+    z-index: 999;
+    font-family: serif;
+    font-weight: bold;
+    background-color: #b69663;
+    padding: .1rem 1rem;
+    border-radius: .1rem;
+}
+.volver:hover {
+    background-color: #e4bd7e;
+    transition: 0.5s;
+}
+
+.portadaDetails {
+    min-height: 80vh;
+    width: 100%;
+    background-image: url('../../../public/saul/instalaciones-restaurante-portada_prueba.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.portadaDetails > h1 {
+    margin-top: 14rem;
+    color: aliceblue;
+    font-size: 3.5rem;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.portadaDetails > h2 {
+    color: aliceblue;
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.containerGim {
+    width: 40%;
+    margin-left: 4rem;
+    background-color: rgba(231, 231, 231, 0.411);
+    border-radius: .4rem;
+}
+
+.containerGim > h1 {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+}
+.containerGim > p {
+    width: 60%;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: rgba(240, 248, 255, 0);
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border-radius: .4rem;
+}
+
+.containerGim > p >span {
+    color: #b69663;
+    margin-left: 2rem;
+}
+.containerGim > p > .cena {
+    margin-left: 4.5rem;
+}
+.descriptionGim {
+    width: 90%;
+    font-size: 1.5rem;
+    font-family: serif;
+    margin-bottom: 3rem;
+}
+/*//////////////////////////////////////////////////////*/
+
+.alimentosContainer {
+    width: 90%;
+    margin: 0 auto 3rem auto;
+}
+.alimentosContainer > h1 {
+    font-family: serif;
+    font-weight: bold;
+    margin: 1rem 0;
+    font-size: 2.5rem;
+}
+
+.alimentosContainer > p {
+    width: 90%;
+    margin: 1.7rem 0;
+    font-size: 1.6rem;
+}
+
+
+.subTitulos {
+    font-family: serif;
+    font-weight: bold;
+    color: #b69663;
+    font-size: 1.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.saberMas {
+    margin-bottom: 0;
+    border-radius: .1rem;
+}
+.gimnasioContainer >.detalles {
+    font-size: 1.3rem;
+}
+
+.article0Container {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+.gimnasioContainer {
+    display: flex;
+    width: 90%;
+    margin: 0 auto 3rem auto;
+}
+
+.containerGim {
+    width: 40%;
+}
+.aptttud {
+    color: #b69663;
+    width: 40%;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.containerGim > h1 {
+    width: 90%;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+.descriptionGim {
+    width: 90%;
+    font-size: 1.5rem;
+    font-family: serif;
+    margin-bottom: 3rem;
+}
+
+.saberMas {
+    margin-bottom: 0;
+    border-radius: .1rem;
+}
+
+
+/*/////////////////////////////////////////////////////*
+/*PORTADA PISCINA*/
+.portadaPiscina {
+    min-height: 80vh;
+    width: 100%;
+    background-image: url('../../../public/saul/piscinaPortada.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.portadaPiscina > h1 {
+    margin-top: 14rem;
+    color: aliceblue;
+    font-size: 3.5rem;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.portadaPiscina > h2 {
+    color: aliceblue;
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*///////////////////////////////////////////*/
+/*GIMNASIO*/
+.portadaGym {
+    min-height: 80vh;
+    width: 100%;
+    background-image: url('../../../public/gym3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.portadaGym > h1 {
+    margin-top: 14rem;
+    color: aliceblue;
+    font-size: 3.5rem;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.portadaGym > h2 {
+    color: aliceblue;
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*/////////////////////////////*/
+/*SPA*/
+.portadaSpa {
+    min-height: 80vh;
+    width: 100%;
+    background-image: url('../../../public/instalaciones/spaPrueba.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.portadaSpa > h1 {
+    margin-top: 14rem;
+    color: aliceblue;
+    font-size: 3.5rem;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.portadaSpa > h2 {
+    color: aliceblue;
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bold;
+    text-align: center;
+}

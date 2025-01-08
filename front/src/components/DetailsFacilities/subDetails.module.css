@@ -1,0 +1,89 @@
+.menuDetails {
+    background-color: rgba(231, 231, 231, 0.411);
+    padding: 0 4rem 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.masDetalles {
+   align-self: flex-start;
+   margin: 0rem 0 1rem 5rem;
+   padding: .1rem .5rem;
+   border-radius: .2rem;
+}
+
+.submMenuDetails {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.submMenuDetails > h1 {
+    font-size: 3rem;
+    font-family: serif;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.submMenuDetails > button {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: #b69663;
+    color: aliceblue;
+    margin: .5rem 1.5rem;
+    width: 20%;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submMenuDetails > button:hover {
+    background-color: #ACACAC;
+}
+
+.cardContainer {
+   /* border: blue;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.cards {
+    /*border: solid;*/
+    margin: .2rem;
+    height: 100%;
+    width: 45%;  
+    box-sizing: border-box;
+    display: flex;
+    background-color: rgba(240, 248, 255, 0);
+    box-shadow: 0 .2rem 1.1rem rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+/* Descripción de las tarjetas */
+.cardsDescription {
+    margin-top: 1rem;
+    margin: 1.5rem;
+   /*border: solid violet;*/
+}
+
+.cardsDescription > h3 {
+    border-bottom: solid  #b69663;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.cardsDescription > p {
+    /*border: solid;*/
+    width: 100%;
+    font-size: 1.1rem;
+}
+.submMenuDetails .activo {
+    background-color: #ACACAC;
+}

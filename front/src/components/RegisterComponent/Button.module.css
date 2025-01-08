@@ -1,0 +1,23 @@
+
+
+.googleButton {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #444;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .googleButton:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .googleButton img {
+    margin-right: 8px;
+  }
+  

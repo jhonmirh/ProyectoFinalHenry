@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.container > h2 {
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+}
+
+.buttonConainer > button {
+    margin: 0 .2rem;
+    padding: .1rem 1rem;
+    border-radius: .2rem;
+}
+.detalles {
+    width: 100%;
+    margin: 2rem 0;
+}
+.txt {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: .1rem solid;
+}
+.txt > span {
+    color: #c19d68;
+    margin-left: auto;
+
+}
+.select {
+    background-color: #ACACAC;
+}
