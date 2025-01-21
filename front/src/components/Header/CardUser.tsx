@@ -58,10 +58,13 @@ const CardUser = () => {
 
       {dropdownOpen && (
         <div className="absolute right-0 mt-2 flex w-52 flex-col rounded-sm shadow-mostaza bg-grisOscuro">
+          
+          
+          {userData?.userData.role.name === "Cliente" && (
           <ul className="flex flex-col gap-3 border-mostaza">
             <li>
               <Link
-                href="/reserva"
+                href="/rooms"
                 className="flex items-center gap-3 mt-3 px-4 py-7.5 text-sm font-medium text-white hover:text-mostaza lg:text-base"
               >
                 <svg
@@ -102,33 +105,10 @@ const CardUser = () => {
                 </svg>
                 Mi Perfil
               </Link>
-            </li>
-
-            {userData?.userData.role.name === "Administrador" && (
-              <li>
-                <Link
-                  href="/"
-                  className="flex items-center gap-4 px-6 py-7.5 text-sm font-medium text-white hover:text-mostaza lg:text-base"
-                >
-                  <svg
-                    className="text-white"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 22 22"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 12c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm6 0c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm-6 2c-2.67 0-8 1.34-8 4v2h8v-2c0-.68.33-1.34.88-1.72C7.91 16.77 8.45 16 9 16c.55 0 1.09.77 1.12 1.28.55.38.88 1.03.88 1.72v2h8v-2c0-2.66-5.33-4-8-4zm9.78 2c-.53 0-1.04.23-1.41.63-.43.46-.75 1.13-.75 1.84h2.52v-2c0-.26-.1-.52-.36-.72zM12 18v-2c-.78-.61-1.75-1-3-1s-2.22.39-3 1v2h6z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  Dashboard Admin
-                </Link>
-              </li>
-            )}
+            </li>    
             <li>
               <Link
-                href="/profile"
+                href="/myBookings"
                 className="flex items-center gap-3.5 px-6 py-7.5 text-sm font-medium text-white hover:text-mostaza lg:text-base"
               >
                 <svg
@@ -176,6 +156,10 @@ const CardUser = () => {
               </Link>
             </li>
           </ul>
+          )}
+
+
+
           <button
             className="flex items-center gap-2 px-2 py-2 text-sm font-medium bg-mostaza lg:text-base"
             onClick={() => {

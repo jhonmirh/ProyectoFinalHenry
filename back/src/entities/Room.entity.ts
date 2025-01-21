@@ -147,4 +147,18 @@ export class Room {
   })
   @Column({ default: false })
   isDeleted: boolean;
+
+  
+   /**
+   * Indica si la habitación está disponible.
+   * @example true
+   */
+   @ApiProperty({
+    example: true,
+
+    description: 'Indica si la habitación está disponible.',
+
+  })
+  @Column({ default: true })
+  available: boolean;
 }

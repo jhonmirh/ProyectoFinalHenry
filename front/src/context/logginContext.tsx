@@ -31,6 +31,7 @@ export const LogginProvider: React.FC<LogginProviderProps> = ({ children }) => {
           userData: userData.userData
         })
       );
+      localStorage.setItem("token", userData.token); // Almacenar el token por separado
     }
   }, [userData]);
 

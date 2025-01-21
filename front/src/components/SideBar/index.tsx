@@ -21,25 +21,6 @@ const Sidebar = () => {
       <ul className="space-y-4">
         <li
           className="hover:text-mostaza cursor-pointer flex items-center"
-          title="CLIENTES REGISTRADOS"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-10 h-10"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M9 12c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm6 0c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm-6 2c-2.67 0-8 1.34-8 4v2h8v-2c0-.68.33-1.34.88-1.72C7.91 16.77 8.45 16 9 16c.55 0 1.09.77 1.12 1.28.55.38.88 1.03.88 1.72v2h8v-2c0-2.66-5.33-4-8-4zm9.78 2c-.53 0-1.04.23-1.41.63-.43.46-.75 1.13-.75 1.84h2.52v-2c0-.26-.1-.52-.36-.72zM12 18v-2c-.78-.61-1.75-1-3-1s-2.22.39-3 1v2h6z"
-              fill="currentColor"
-            />
-          </svg>
-          {isExpanded && (
-            <Link href="/clientdetails">Clientes Registrados</Link>
-          )}
-        </li>
-        <li
-          className="hover:text-mostaza cursor-pointer flex items-center"
           title="HISTORIAL DE CLIENTES"
         >
           <svg
@@ -142,13 +123,13 @@ const Sidebar = () => {
               d="M10 10 H 190 V 140 H 10 Z"
               fill="#f0f0f0"
               stroke="#000"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <path
               d="M10 10 Q 0 75 10 140"
               fill="none"
               stroke="#000"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
           {isExpanded && (

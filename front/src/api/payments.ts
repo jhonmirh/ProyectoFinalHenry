@@ -20,7 +20,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { amount, currency, description } = req.body as CreateCheckoutSessionBody;
 
   try {
-    // Realiza la solicitud al backend de NestJS
+
+    
+
     const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/payments/checkout`, {
       amount,
       currency,
@@ -33,7 +35,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json({ url: response.data.url });
   } catch (error) {
-    // Definimos el tipo de error como AxiosError
+
+    
     const axiosError = error as AxiosError<ErrorResponse>;
     console.error('Error en el API de Next.js:', axiosError.message);
     res.status(500).json({ message: axiosError.response?.data.message || 'Error interno del servidor' });

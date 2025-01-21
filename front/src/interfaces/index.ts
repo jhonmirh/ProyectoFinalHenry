@@ -18,3 +18,13 @@ export interface Booking {
     checkOutDate: Date,
     //status?: 'pending' | 'confirmed' | 'cancelled';
 }
+
+export interface Reservation {
+    id: string;
+    userId: string;
+    roomId: string;
+    checkInDate: Date;
+    checkOutDate: Date;
+    paymentStatus: string;
+    isDeleted: boolean;
+  }

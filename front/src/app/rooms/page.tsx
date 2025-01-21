@@ -11,7 +11,7 @@ const Page = () => {
   const [sortCriteria, setSortCriteria] = useState<string>("default");
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
   const [guestCount, setGuestCount] = useState<number>(0);
-  const [useGuestCount, setUseGuestCount] = useState<boolean>(false); 
+  const [useGuestCount, setUseGuestCount] = useState<boolean>(false);
   const [showFilter, setShowFilter] = useState<boolean>(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Page = () => {
   const applyFilters = () => {
     const filteredRooms = rooms.filter((room) => {
       const matchesPrice = room.price >= priceRange[0] && room.price <= priceRange[1];
-      const matchesGuests = !useGuestCount || room.beds >= guestCount;
+      const matchesGuests = !useGuestCount || room.beds === guestCount;
       return matchesPrice && matchesGuests;
     });
     setSortedRooms(filteredRooms);
@@ -94,8 +94,7 @@ const Page = () => {
                     )}
 
                     renderThumb={({ props }) => {
-                      const { key, ...restProps } = props;
-
+                      let { key, ...restProps } = props;
                       return (
                         <div
                           key={key}
@@ -113,7 +112,7 @@ const Page = () => {
 
                 <div className="mb-4">
                   <label className="block text-gray-700 font-semibold mb-2">
-                    Huéspedes:
+                    Desea seleccionar cantidad de huéspedes?
                   </label>
                   <div className="flex items-center gap-2">
                     <input
@@ -121,7 +120,7 @@ const Page = () => {
                       min="1"
                       value={guestCount}
                       onChange={(e) => setGuestCount(+e.target.value)}
-                      className="py-2 px-4 border rounded-md w-full bg-gray-200"
+                      className="py-2 px-4 border rounded-md w-full "
                       disabled={!useGuestCount}
                     />
                     <label className="flex items-center">
@@ -129,9 +128,9 @@ const Page = () => {
                         type="checkbox"
                         checked={useGuestCount}
                         onChange={(e) => setUseGuestCount(e.target.checked)}
-                        className="mr-2  accent-mostaza border-grisOscuro"
+                        className="mr-2 accent-mostaza border-grisOscuro"
                       />
-                      
+                      {useGuestCount ? "Sí" : "No"}
                     </label>
                   </div>
                 </div>
@@ -149,7 +148,7 @@ const Page = () => {
                   onClick={() => {
                     setPriceRange([0, 5000]);
                     setGuestCount(0);
-                    setUseGuestCount(false); 
+                    setUseGuestCount(false);
                     setSortedRooms(rooms);
                     setShowFilter(false);
                   }}
@@ -172,7 +171,7 @@ const Page = () => {
           </select>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-10 pl-10">
         {sortedRooms.length > 0 ? (
           sortedRooms.map((room, i) => <RoomCard key={i} {...room} />)

@@ -39,7 +39,7 @@ const FeatureSection = () => {
           </div>
           <div className=" h-[1.5px] bg-mostaza my-5"></div>
           <div>
-            <button className="bg-mostaza border-mostaza uppercase text-secondary py-2 px-4 hover:bg-opacity-70 transition-all">
+            <button className="bg-mostaza border-mostaza uppercase py-2 px-4 hover:bg-opacity-70 transition-all">
               <Link href="/rooms">Más Información</Link>
             </button>
           </div>

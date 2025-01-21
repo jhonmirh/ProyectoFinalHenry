@@ -1,12 +1,15 @@
-export const getClientList = async () => {
-  const APIURL = process.env.NEXT_PUBLIC_API_URL;
+import axios from 'axios';
+import { log } from 'util';
 
-  const response = await fetch(`${APIURL}/users/clientlist`, {
-    method: "GET",
+export const getClientList = async (token:string) => {
+  
+
+
+  
+  const response = await axios.get('http://localhost:4000/users/clientlist', {
     headers: {
-      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`, // Enviar el token en el encabezado de autorización
     },
   });
-  const data = await response.json();
-  return data;
+  return response.data;
 };

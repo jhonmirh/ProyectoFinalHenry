@@ -37,11 +37,11 @@ const RoomDetail = ({
         id,
         checkInDate,
         checkOutDate,
-        userData.token // Pasa el token a la función
+        userData.token 
       );
       console.log("Reserva realizada:", result);
       Swal.fire("Reserva realizada con éxito!", "Gracias por elegirnos", "success");
-      router.push("/"); // Esto en el futuro lo tenemos que redireccionar al dashboard
+      router.push("/myBookings");
     } catch (error) {
       console.error("Error al reservar:", error);
       Swal.fire("Error", "Hubo un error al realizar la reserva. Intenta nuevamente.", "error");
@@ -49,7 +49,7 @@ const RoomDetail = ({
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex">
+    <div className="max-w-4xl mx-auto  shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex">
       <div className="w-1/2 relative">
         <Image
           src={image}
@@ -58,7 +58,7 @@ const RoomDetail = ({
           objectFit="cover"
           className="rounded-t-lg"
         />
-        <div className="absolute top-2 right-2 bg-tertiary text-white text-sm font-semibold py-1 px-2 rounded-lg shadow-md">
+        <div className="absolute top-2 right-2   text-sm font-semibold py-1 px-2 rounded-lg shadow-md">
           ${price} / noche
         </div>
       </div>
@@ -68,15 +68,15 @@ const RoomDetail = ({
           <h2 className="text-text text-sm uppercase tracking-wide">
             {roomType}
           </h2>
-          <h1 className="text-gray-900 font-bold text-xl mt-1 truncate">
+          <h1 className=" font-bold text-xl mt-1 truncate">
             {title}
           </h1>
-          <p className="text-gray-700 mt-4 text-sm">{description}</p>
+          <p className=" mt-4 text-sm">{description}</p>
         </div>
 
         <div className="mt-4 border-t pt-4">
-          <p className="text-text text-sm mb-2">{size}</p>
-          <p className="text-text text-sm mb-2">{beds} camas</p>
+          <p className=" text-sm mb-2">{size}</p>
+          <p className=" text-sm mb-2">{beds} camas</p>
           <div className="flex items-center">
             {Array.from({ length: 5 }, (_, i) => (
               <FaStar
@@ -88,25 +88,27 @@ const RoomDetail = ({
         </div>
 
         <div className="mt-4">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium 0">
             Check-In:
           </label>
           <DatePicker
             selected={checkInDate}
             onChange={(date) => setCheckInDate(date || undefined)}
             className="border rounded-md p-2 w-full"
+            minDate={new Date()}
           />
         </div>
 
         <div className="mt-4">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium ">
             Check-Out:
           </label>
           <DatePicker
             selected={checkOutDate}
             onChange={(date) => setCheckOutDate(date || undefined)}
             className="border rounded-md p-2 w-full"
-            minDate={checkInDate}
+            //minDate={checkInDate}
+            minDate={new Date()}
           />
         </div>
 
@@ -121,7 +123,7 @@ const RoomDetail = ({
                 ? "Seleccione fechas de Check-In y Check-Out"
                 : ""
             }
-            className={`bg-tertiary focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center text-white ${
+            className={` focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center justify-center  ${
               !userData?.token || !checkInDate || !checkOutDate
                 ? "opacity-50 cursor-not-allowed"
                 : "cursor-pointer"
@@ -130,12 +132,7 @@ const RoomDetail = ({
             <FaCalendarAlt className="mr-2" />
             Reservá ahora
           </button>
-          <PaymentButton
-            amount={price}
-            currency="usd"
-            description={description}
-            id={id}
-          />
+          
         </div>
       </div>
     </div>

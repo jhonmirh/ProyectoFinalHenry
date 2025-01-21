@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import { getClientList } from "@/api/clientList";
 import Link from "next/link";
 import ProtectedAdmin from "../ProtectedAdmin/page";
+import { useLoggin } from "@/context/logginContext";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 interface Client {
   id: string;
@@ -16,30 +19,61 @@ const ClientList: React.FC = () => {
   const [clients, setClients] = useState<Client[]>([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
-
+  const [error, setError] = useState<string | null>(null);
+  const { userData } = useLoggin();
+  const router = useRouter();
+const token = userData?.token;
   useEffect(() => {
+    if (!userData) {
+      router.push("/login");
+      return;
+    }
+    console.log(`Token Actual Administrador.->>> ${token}`);
+
     const fetchClients = async () => {
       try {
-        const data = await getClientList();
-        setClients(data);
-      } catch (error) {
-        console.error("Error al obtener los clientes:", error);
+        const data = await getClientList(userData.token);
+        
+        if (Array.isArray(data)) {
+          setClients(data);
+        } else {
+          console.error("Error: La respuesta no es un array de clientes");
+          setError("Error al obtener los clientes");
+        }
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          if (err.response && err.response.status === 403) {
+            setError("No autorizado. Por favor, inicie sesión.");
+          } else {
+            console.error("Error al obtener los clientes:", err.message);
+            setError("Error al obtener los clientes");
+          }
+        } else {
+          console.error("Error desconocido:", err);
+          setError("Error desconocido al obtener los clientes");
+        }
       } finally {
         setLoading(false);
       }
     };
 
     fetchClients();
-  }, []);
+  }, [userData, router]);
 
-  const filteredClients = clients.filter(
-    (client) =>
-      client.name.toLowerCase().includes(filter.toLowerCase()) ||
-      client.email.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredClients = Array.isArray(clients)
+    ? clients.filter(
+        (client) =>
+          client.name.toLowerCase().includes(filter.toLowerCase()) ||
+          client.email.toLowerCase().includes(filter.toLowerCase())
+      )
+    : [];
 
   if (loading) {
     return <div>Cargando clientes...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (

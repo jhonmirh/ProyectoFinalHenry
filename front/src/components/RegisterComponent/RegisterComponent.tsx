@@ -32,13 +32,13 @@ const RegisterComponent = () => {
     <form onSubmit={handleSubmit} className={`${Style.container} bg-beige `}>
       {/*Imagen estática para el componente Register*/}
       <div className={Style.imgContainer}>
-        <Image src={registerImg} alt="Usuario" width={525} height={525} />
+        <Image src={registerImg} alt="Usuario" width={525} height={525} loading="lazy"/>
       </div>
       {/*Formulario de registro*/}
       <div className={Style.formContainer}>
         <h1>Registrarse</h1>
         {errors.name && (
-          <p className="text-red-500 text-xs m-2">{errors.name}</p>
+          <p className={`${Style.validaciones} text-xs m-2`}>{errors.name}</p>
         )}
         {/*Nombre*/}
         <div className={Style.inputLabelGroup}>
@@ -66,7 +66,7 @@ const RegisterComponent = () => {
         </div>
         {/*Email*/}
         {errors.email && (
-          <p className="text-red-500 text-xs m-2">{errors.email}</p>
+          <p className={`${Style.validaciones} text-xs m-2`}>{errors.email}</p>
         )}
         <div className={Style.inputLabelGroup}>
           <Image
@@ -92,7 +92,7 @@ const RegisterComponent = () => {
         </div>
         {/*Contraseña*/}
         {errors.password && (
-          <p className="text-red-500 text-xs m-2">{errors.password}</p>
+          <p className={`${Style.validaciones} text-xs m-2`}>{errors.password}</p>
         )}
         <div className={Style.inputLabelGroup}>
           <Image
@@ -118,7 +118,7 @@ const RegisterComponent = () => {
         </div>
         {/*Confirmar contraseña*/}
         {errors.confirm_password && (
-          <p className="text-red-500 text-xs m-2">{errors.confirm_password}</p>
+          <p className={`${Style.validaciones} text-xs m-2`}>{errors.confirm_password}</p>
         )}
         <div className={Style.inputLabelGroup}>
           <Image
@@ -144,9 +144,10 @@ const RegisterComponent = () => {
         </div>
         {/*Teléfono*/}
         {errors.phone && (
-          <p className="text-red-500 text-xs m-2">{errors.phone}</p>
+          <p className={`${Style.validaciones} text-xs m-2`}>{errors.phone}</p>
         )}
         <div className={Style.inputLabelGroup}>
+
           <Image
             src={phone}
             width={25}
@@ -169,7 +170,7 @@ const RegisterComponent = () => {
           </label>
         </div>
         {/*Dni*/}
-        {errors.dni && <p className="text-red-500 text-xs m-2">{errors.dni}</p>}
+        {errors.dni && <p className={`${Style.validaciones} text-xs m-2`}>{errors.dni}</p>}
         <div className={Style.inputLabelGroup}>
           <Image
             src={DNI}

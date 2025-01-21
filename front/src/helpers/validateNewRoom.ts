@@ -45,15 +45,18 @@ export const validateImage = (image: string): string => {
 };
 
 export const validateRoomType = (roomType: string): string => {
-    if (!roomType) return "El tipo de habitación es obligatorio."; 
-    const validTypes = [
-        "Habitación de lujo",
-        "Habitación estándar",
-        "Suite",
-        "Habitación familiar deluxe"
-    ];
-    return validTypes.includes(roomType)
-        ? ""
-        : `El tipo de habitación debe ser uno de los siguientes: ${validTypes.join(", ")}.`;
-};
+    const validTypes = {
+      luxury: "Habitación de lujo",
+      standard: "Habitación estándar",
+      suite: "Suite",
+      family: "Habitación familiar deluxe",
+    };
+  
+    if (!roomType) return "El tipo de habitación es obligatorio.";
+  
+    const isValid = Object.keys(validTypes).includes(roomType);
+    return isValid
+      ? ""
+      : `El tipo de habitación debe ser uno de los siguientes: ${Object.values(validTypes).join(", ")}.`;
+  };
 

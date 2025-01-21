@@ -58,7 +58,7 @@ const ClientDetails: React.FC = () => {
 
   return (
     <ProtectedClient>
-      <div className="shadow-md rounded-lg overflow-hidden mt-4">
+      <div className="shadow-md rounded-lg overflow-hidden mt-4 min-h-screen">
         <h2 className="text-[2.5rem] font-semibold px-6 py-4">
           Detalles del Cliente
         </h2>
@@ -73,7 +73,7 @@ const ClientDetails: React.FC = () => {
             <strong>Teléfono:</strong> {client.phone}
           </h3>
         </div>
-        <h3 className="text-[1.5rem] font-semibold px-6 py-4">
+        {/* <h3 className="text-[1.5rem] font-semibold px-6 py-4">
           Historial de Reservas
         </h3>
         {client.reservations.length === 0 ? (
@@ -109,7 +109,7 @@ const ClientDetails: React.FC = () => {
               ))}
             </tbody>
           </table>
-        )}
+        )} */}
       </div>
     </ProtectedClient>
   );

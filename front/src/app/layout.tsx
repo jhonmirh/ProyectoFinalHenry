@@ -20,17 +20,7 @@ export default function RootLayout({
             <LogginProvider>
               <Header />
 
-              {/* <div className="flex flex-1"> */}
-              <div>
-                <ShowComponent>
-                  <Sidebar />
-                </ShowComponent>
-
-                {/* <main className="flex-1 p-4 overflow-y-auto ml-5"> */}
-                <main>
-                  {children}
-                </main>
-              </div>
+              <main>{children}</main>
 
               <Chatbot />
               <Footer />

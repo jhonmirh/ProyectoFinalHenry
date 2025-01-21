@@ -19,15 +19,13 @@ export class UsersService {
 
   async findUsers(): Promise<User[]> {
     return await this.userRepository.find({
-      relations: ['reservations','role'],
+      relations: ['reservations', 'role'],
       where: {
         role: {
-            name: 'Cliente'
-        }
-    }
-
-  });
-    
+          name: 'Cliente',
+        },
+      },
+    });
   }
 
   async findUsersById(id: string): Promise<User | undefined> {

@@ -1,10 +1,11 @@
 import { Injectable, NotFoundException, UnauthorizedException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Room } from "src/entities/Room.entity";
+import { Room } from '../../entities/Room.entity';
 import { Repository } from "typeorm";
-import { FilesService } from "../files/files.service";
-import { CreateRoomDto } from "./dto/create-room.dto";
-import { roomsMock } from "./rooms-mock";
+import { FilesService } from '../files/files.service';
+import { CreateRoomDto } from './dto/create-room.dto';
+import { roomsMock } from './rooms-mock';
+import { updateRoom } from "./dto/updateRoom.dto";
 
 
 @Injectable()
@@ -84,5 +85,10 @@ export class RoomsRepository {
       }
 
       console.log('Rooms seeding complete')
+  }
+
+  async updateRoom(id: string, updateRoom: updateRoom): Promise<Room> {
+    await this.roomRepository.update(id, updateRoom);
+        return this.findById(id);
   }
 }

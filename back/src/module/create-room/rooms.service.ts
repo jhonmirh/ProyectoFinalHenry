@@ -1,7 +1,8 @@
 import { Injectable, BadRequestException, NotFoundException } from '@nestjs/common';
 
-import { Room } from 'src/entities/Room.entity';
+import { Room } from '../../entities/Room.entity';
 import { CreateRoomDto } from './dto/create-room.dto';
+import { updateRoom } from './dto/updateRoom.dto';
 import { RoomsRepository } from './rooms.repository';
 
 @Injectable()
@@ -55,4 +56,14 @@ export class RoomsService {
 
     return room;
   }
+
+  async updateRoom(id: string, updateRoom:updateRoom): Promise<string> {
+    const room = await this.roomRepository.findById(id);
+    if (!room) {
+        throw new NotFoundException(`Room with ID ${id} not found`);
+    }
+
+    await this.roomRepository.updateRoom(id, updateRoom);
+    return 'Room changed successfully';
+}
 }

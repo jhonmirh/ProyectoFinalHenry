@@ -3,9 +3,14 @@ import { getRoomById } from "@/api/getRooms";
 import NotFound from "@/app/not-found";
 import ProtectedClient from "@/components/ProtectedClient/page";
 
+interface Params {
+  id: string;
+  price: number;
+}
+
 const Page = async ({ params }: { params: { id: string } }) => {
   try {
-    const { id } = params;
+    const { id } = await params;
     const room = await getRoomById(id);
 
     if (!room) {

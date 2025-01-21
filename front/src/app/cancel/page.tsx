@@ -1,7 +1,13 @@
+'use client';
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 const CancelPage: FC = () => {
+  useEffect(() => {
+
+    localStorage.removeItem('reservation');
+  }, []);
+
   return (
     <div className="container mx-auto py-16">
       <h2 className="text-6xl font-extrabold mb-12 text-center bg-gradient-to-r text-titulo bg-clip-text">

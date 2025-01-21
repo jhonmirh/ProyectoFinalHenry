@@ -1,13 +1,6 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { registerAs } from '@nestjs/config';
 import { config as dotenvConfig } from 'dotenv';
-import { Reservation } from 'src/entities/Reservation.entity';
-
-import { Room } from 'src/entities/Room.entity';
-
-import { User } from 'src/entities/User.entity';
-import { Role } from 'src/entities/Role.entity';
-import { Testimonial } from 'src/entities/Testimonial.entity';
 
 dotenvConfig({ path: '.env' });
 
@@ -20,13 +13,13 @@ const config = {
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+  entities: ["dist/**/*.entity{.ts,.js}"],
   migrations: [__dirname + '/../migrations/*{.ts,.js}'],
   synchronize: true,
   logging: false,
-  // dropSchema: true,
+  //dropSchema: true,
   ssl: sslConfig,
-
+ 
 };
 
 export default registerAs('typeorm', () => config);

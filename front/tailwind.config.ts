@@ -19,6 +19,7 @@ export default {
         grisClaro: "#ACACAC",
         mostaza: "#C19D68",
         beige: "#f8f6f3",
+        crema: '#f8f6f3',
       },
     },
   },

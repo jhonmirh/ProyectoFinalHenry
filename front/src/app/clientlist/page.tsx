@@ -1,13 +1,8 @@
 import React from "react";
-import UserListWithReservations from "@/components/UserListWithReservations/UserListWithReservations";
-import ProtectedAdmin from "@/components/ProtectedAdmin/page";
+import ClientList from "@/components/ClientList/ClientList";
 
 const page = () => {
-  return (
-    <ProtectedAdmin>
-      <UserListWithReservations />
-    </ProtectedAdmin>
-  );
+  return <ClientList />;
 };
 
 export default page;
